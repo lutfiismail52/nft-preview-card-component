@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Colors */
+
+:root {
+  /* Primary */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* Neutral */
+  --very-dark-blue-body: hsl(217, 54%, 11%); /* main BG */
+  --very-dark-blue-card: hsl(216, 50%, 16%); /* card BG */
+  --very-dark-blue-line: hsl(215, 32%, 27%); /* line */
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Outfit";
+  background-color: var(--very-dark-blue-body);
+}
+
+p {
+  font-size: 18px;
+}
+
+.nft-card {
+  width: 90%;
+  background-color: var(--very-dark-blue-card);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 28px auto;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.view-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.title {
+  color: var(--white);
+  font-size: 2rem;
+  margin: 16px 0;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: var(--cyan);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--soft-blue);
+  margin: 16px 0;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--cyan);
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--soft-blue);
+}
+
+hr {
+  border: 1px solid var(--very-dark-blue-line);
+  margin: 16px 0;
+}
+
+.creator-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.creator-picture {
+  border: 2px solid var(--white);
+  border-radius: 100%;
+  width: 40px;
+}
+
+.creator-name {
+  color: var(--soft-blue);
+  font-style: normal;
+}
+
+.creator-name span {
+  color: var(--white);
+}
+
+.creator-name span:hover {
+  cursor: pointer;
+  color: var(--cyan);
+}
+
+/* Responsive Design */
+@media screen and (min-width: 768px) {
+  .nft-card {
+    width: 400px;
+  }
+}
